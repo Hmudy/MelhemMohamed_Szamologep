@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Szamologep
 {
     internal class Program
     {
-        static double Osszeadas(double elsoszam,  double masodikszam)
+        static double Osszeadas(double elsoszam, double masodikszam)
         {
             return elsoszam + masodikszam;
         }
@@ -26,12 +22,13 @@ namespace Szamologep
         }
         static double Szazalek(double elsoszam, double masodikszam)
         {
-            return (elsoszam/masodikszam)*100;
+            return (elsoszam / masodikszam) * 100;
         }
         static double Gyok(double elsoszam)
         {
             return Math.Sqrt(elsoszam);
         }
+
         static void Indit()
         {
             Console.Write("Kérem adja meg az első számot: ");
@@ -39,35 +36,36 @@ namespace Szamologep
             Console.Write("Kérem adja meg a második számot: ");
             double masodikszam = double.Parse(Console.ReadLine());
             Console.Write("Az elvégezendő művelet jele: ");
-            char muvelet = char.Parse(Console.ReadLine());
-            if (muvelet == '+')
+            string muvelet = Console.ReadLine();  // Most már string típusú, hogy kezelje a szöveges parancsokat
+
+            if (muvelet == "+")
             {
                 Console.WriteLine($"{elsoszam} {muvelet} {masodikszam} = {Osszeadas(elsoszam, masodikszam)}");
-
             }
-            else if (muvelet == '-')
+            else if (muvelet == "-")
             {
                 Console.WriteLine($"{elsoszam} {muvelet} {masodikszam} = {Kivonas(elsoszam, masodikszam)}");
             }
-            else if (muvelet == '*')
+            else if (muvelet == "*")
             {
                 Console.WriteLine($"{elsoszam} {muvelet} {masodikszam} = {Szorzas(elsoszam, masodikszam)}");
             }
-            else if (muvelet == '/')
+            else if (muvelet == "/")
             {
                 Console.WriteLine($"{elsoszam} {muvelet} {masodikszam} = {Osztas(elsoszam, masodikszam)}");
             }
-            else if (muvelet == '%')
+            else if (muvelet == "%")
             {
                 Console.WriteLine($"{elsoszam} {muvelet} {masodikszam} = {Szazalek(elsoszam, masodikszam)}");
             }
-            else if (muvelet == '√')
+            else if (muvelet.ToLower() == "sqrt")
             {
                 Console.WriteLine($"√{elsoszam} = {Gyok(elsoszam)}");
+                Console.WriteLine($"√{masodikszam} = {Gyok(masodikszam)}");
             }
             else
             {
-                Console.WriteLine("Hibás Művelet jelet adott meg");
+                Console.WriteLine("Hibás művelet jelet adott meg");
             }
         }
 
@@ -75,7 +73,6 @@ namespace Szamologep
         {
             Indit();
             Console.ReadKey();
-
         }
     }
 }
