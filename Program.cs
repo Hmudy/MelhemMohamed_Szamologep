@@ -28,6 +28,10 @@ namespace Szamologep
         {
             return (elsoszam/masodikszam)*100;
         }
+        static double Gyok(double elsoszam)
+        {
+            return Math.Sqrt(elsoszam);
+        }
         static void Indit()
         {
             Console.Write("Kérem adja meg az első számot: ");
@@ -56,6 +60,10 @@ namespace Szamologep
             else if (muvelet == '%')
             {
                 Console.WriteLine($"{elsoszam} {muvelet} {masodikszam} = {Szazalek(elsoszam, masodikszam)}");
+            }
+            else if (muvelet == '√')
+            {
+                Console.WriteLine($"√{elsoszam} = {Gyok(elsoszam)}");
             }
             else
             {
