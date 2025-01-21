@@ -26,12 +26,48 @@ namespace Szamologep
         }
         static double Szazalek(double elsoszam, double masodikszam)
         {
-            return elsoszam % masodikszam;
+            return (elsoszam/masodikszam)*100;
+        }
+        static void Indit()
+        {
+            Console.Write("Kérem adja meg az első számot: ");
+            double elsoszam = double.Parse(Console.ReadLine());
+            Console.Write("Kérem adja meg a második számot: ");
+            double masodikszam = double.Parse(Console.ReadLine());
+            Console.Write("Az elvégezendő művelet jele: ");
+            char muvelet = char.Parse(Console.ReadLine());
+            if (muvelet == '+')
+            {
+                Console.WriteLine($"{elsoszam} {muvelet} {masodikszam} = {Osszeadas(elsoszam, masodikszam)}");
+
+            }
+            else if (muvelet == '-')
+            {
+                Console.WriteLine($"{elsoszam} {muvelet} {masodikszam} = {Kivonas(elsoszam, masodikszam)}");
+            }
+            else if (muvelet == '*')
+            {
+                Console.WriteLine($"{elsoszam} {muvelet} {masodikszam} = {Szorzas(elsoszam, masodikszam)}");
+            }
+            else if (muvelet == '/')
+            {
+                Console.WriteLine($"{elsoszam} {muvelet} {masodikszam} = {Osztas(elsoszam, masodikszam)}");
+            }
+            else if (muvelet == '%')
+            {
+                Console.WriteLine($"{elsoszam} {muvelet} {masodikszam} = {Szazalek(elsoszam, masodikszam)}");
+            }
+            else
+            {
+                Console.WriteLine("Hibás Művelet jelet adott meg");
+            }
         }
 
         static void Main(string[] args)
         {
-           
+            Indit();
+            Console.ReadKey();
+
         }
     }
 }
