@@ -16,6 +16,10 @@ namespace Szamologep
         {
             return elsoszam - masodikszam;
         }
+        static double Osztas(double elsoszam, double masodikszam)
+        {
+            return elsoszam / masodikszam;
+        }
 
         static void Main(string[] args)
         {
