@@ -8,8 +8,13 @@ namespace Szamologep
 {
     internal class Program
     {
+        static double Osszeadas(double elsoszam,  double masodikszam)
+        {
+            return elsoszam + masodikszam;
+        }
         static void Main(string[] args)
         {
+           
         }
     }
 }
